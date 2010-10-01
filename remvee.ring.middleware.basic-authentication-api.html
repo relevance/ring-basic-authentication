@@ -70,23 +70,26 @@ by <span id="author">Remco van 't Veer</span><br />
   <hr />
   <h2 id="remvee.ring.middleware.basic-authentication/wrap-basic-authentication">wrap-basic-authentication</h2>
   <span id="var-type">function</span><br />
-  <pre id="var-usage">Usage: (wrap-basic-authentication app realm authenticate)
-       (wrap-basic-authentication app realm authenticate matcher)
+  <pre id="var-usage">Usage: (wrap-basic-authentication app authenticate)
+       (wrap-basic-authentication app authenticate realm)
+       (wrap-basic-authentication app authenticate realm denied-response)
 </pre>
   <pre id="var-docstr">Wrap response with a basic authentication challenge as described in
 RFC2617 section 2.
-
-The realm is a descriptive string visible to the visitor.  It,
-together with the canonical root URL, defines the protected resource
-on the server.
 
 The authenticate function is called with two parameters, the
 username and password, and should return a value when the login is
 valid.
 
-The optional matcher function determines if authorization is
-required.  Is receives the original request map.</pre>
-  <a href="http://github.com/remvee/ring-basic-authentication/blob/76ccb3d9adf45b31dcfea64d10c80bbb22bdb229/src/remvee/ring/middleware/basic_authentication.clj#L15" id="var-source">Source</a>
+The realm is a descriptive string visible to the visitor.  It,
+together with the canonical root URL, defines the protected resource
+on the server.
+
+The denied-response is a ring response structure which will be
+returned when authorization fails.  The appropriate status and
+authentication headers will be merged into it.  It defaults to plain
+text 'access denied' response.</pre>
+  <a href="http://github.com/remvee/ring-basic-authentication/blob/7b838845a5c4a4ed1f28ec1081c09b79aecf6d79/src/remvee/ring/middleware/basic_authentication.clj#L15" id="var-source">Source</a>
 </div>
 
 
