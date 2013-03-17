@@ -4,7 +4,7 @@
    :wiki-url "ring.middleware.basic-authentication-api.html",
    :name "ring.middleware.basic-authentication",
    :author "Remco van 't Veer",
-   :doc "HTTP basis authentication middleware for ring."}),
+   :doc "HTTP basic authentication middleware for ring."}),
  :vars
  ({:arglists
    ([app authenticate]
